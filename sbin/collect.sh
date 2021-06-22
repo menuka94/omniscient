@@ -56,11 +56,11 @@ while read line; do
     if [ $host == "127.0.0.1" ]; then
         # copy local data to collect directory
         cp $logfile.nmon.csv $2/$nodeid-$host.nmon.csv
-        cp $logfile.nvidia $2/$nodeid-$host.nvidia
+#        cp $logfile.nvidia $2/$nodeid-$host.nvidia
     else
         # copy remote data to collect directory
         scp $host:$logfile.nmon.csv $2/$nodeid-$host.nmon.csv
-        scp $host:$logfile.nvidia $2/$nodeid-$host.nvidia
+#        scp $host:$logfile.nvidia $2/$nodeid-$host.nvidia
     fi
 
     nodeid=$(( nodeid + 1 ))

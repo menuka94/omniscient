@@ -8,7 +8,7 @@ fi
 
 # ensure commands are installed
 [ -z "$nmoncmd" ] && echo "nmon command not found" && exit 1
-[ -z "$nvidiasmicmd" ] && echo "nvidia-smi command not found" && exit 1
+#[ -z "$nvidiasmicmd" ] && echo "nvidia-smi command not found" && exit 1
 
 monid="$USER-$(date +%Y%m%d-%H%M%S)"
 
@@ -33,18 +33,18 @@ while read line; do
         # start local monitors
         ($nmoncmd -F $logfile.nmon -c $nmonsnapshots \
             	-s $snapshotseconds -p >> $logfile.pid; \
-            $nvidiasmicmd --query-gpu=$metricsopts \
-                --format=csv,nounits -l $snapshotseconds \
-                    >> $logfile.nvidia & 2>&1; \
+#            $nvidiasmicmd --query-gpu=$metricsopts \
+#                --format=csv,nounits -l $snapshotseconds \
+#                    >> $logfile.nvidia & 2>&1; \
 			echo $! >> $logfile.pid) &
     else
         # start remote monitors
         (ssh $host -n -o ConnectTimeout=500 \
             "$nmoncmd -F $logfile.nmon -c $nmonsnapshots \
                 -s $snapshotseconds -p >> $logfile.pid; \
-            nohup $nvidiasmicmd --query-gpu=$metricsopts \
-                --format=csv,nounits -l $snapshotseconds \
-                    >> $logfile.nvidia 2>&1 </dev/null & \
+#            nohup $nvidiasmicmd --query-gpu=$metricsopts \
+#                --format=csv,nounits -l $snapshotseconds \
+#                    >> $logfile.nvidia 2>&1 </dev/null & \
 			echo \$! >> $logfile.pid") &
     fi
 done <$hostfile

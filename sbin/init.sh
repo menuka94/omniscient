@@ -39,10 +39,10 @@ if [ -z "$nmoncmd" ]; then
 fi
 
 # ensure nvidia-smi is installed
-if [ -z "$nvidiasmicmd" ]; then
-    echo "nvidia-smi command not found"
-    exit 1
-fi
+#if [ -z "$nvidiasmicmd" ]; then
+#    echo "nvidia-smi command not found"
+#    exit 1
+#fi
 
 # create log directories on each host 
 while read line; do
