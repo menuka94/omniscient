@@ -43,25 +43,25 @@ fi
 # execute command
 case "$1" in
     collect)
-        $scriptdir/collect.sh ${@:2}
+        bash $scriptdir/collect.sh ${@:2}
         ;;
     help)
         echo "$usage"
         ;;
     init)
-        $scriptdir/init.sh ${@:2}
+        bash $scriptdir/init.sh ${@:2}
         ;;
     list)
-        $scriptdir/list.sh ${@:2}
+        bash $scriptdir/list.sh ${@:2}
         ;;
     remove)
-        $scriptdir/remove.sh ${@:2}
+        bash $scriptdir/remove.sh ${@:2}
         ;;
     start)
-        $scriptdir/start.sh ${@:2}
+        bash $scriptdir/start.sh ${@:2}
         ;;
     stop)
-        $scriptdir/stop.sh ${@:2}
+        bash $scriptdir/stop.sh ${@:2}
         ;;
     version)
         echo "v$version"

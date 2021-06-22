@@ -1,4 +1,4 @@
-export nmonmetrics="CPU_ALL:User% MEM:memtotal MEM:active MEM:inactive"
+export nmonmetrics="CPU_ALL:User% CPU_ALL:Sys% MEM:memtotal MEM:active MEM:inactive NET:eno1-write-KB/s NET:eno1-read-KB/s NET:eno2-write-KB/s NET:eno2-read-KB/s DISKREAD:sda DISKREAD:sdb DISKREAD:sdc DISKREAD:sdd DISKWRITE:sda DISKWRITE:sdb DISKWRITE:sdc DISKWRITE:sdd"
 export nmonsnapshots=86400
 export nvidiasmimetrics="timestamp utilization.gpu utilization.memory"
 export snapshotseconds=1

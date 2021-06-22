@@ -23,6 +23,10 @@ if [ -z "$nmoncmd" ]; then
     # move binary
     mkdir $projectdir/bin
     case "$ID:$VERSION_ID" in
+        centos:8)
+            mv "$downloaddir/nmon-extract/nmon_x86_rhel75" \
+                "$projectdir/bin/nmon"
+            ;;
         fedora:31)
             mv "$downloaddir/nmon-extract/nmon_x86_rhel75" \
                 "$projectdir/bin/nmon"
@@ -41,7 +45,7 @@ fi
 # ensure nvidia-smi is installed
 if [ -z "$nvidiasmicmd" ]; then
     echo "nvidia-smi command not found"
-    exit 1
+    #exit 1
 fi
 
 # create log directories on each host 
