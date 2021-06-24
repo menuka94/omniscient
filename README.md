@@ -46,6 +46,9 @@ Monitors may be deleted using the 'remove' command. Be sure to stop a monitor be
     # remove monitor with id 'rammerd-20200720-214623'
     ./omni remove rammerd-20200720-214623'
 
+#### Graph collected results
+- `./omni graph directory`
+
 ## TIPS
 #### ssh public key authentication
 TODO

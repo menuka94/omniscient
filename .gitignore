@@ -1,2 +1,5 @@
 etc/hosts.txt
 etc/config.txt
+
+.idea
+.vscode
