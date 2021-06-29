@@ -6,9 +6,8 @@ from os import makedirs
 from os.path import basename, exists, join
 
 def process_file(in_file, metrics):
-    metric_indices = {}
     header = 'timestamp'
-    print(f'in_file: {in_file}')
+    metric_indices = {}
     out_line = ''
     for line in in_file:
         line = line.rstrip() # remove trailing newline character
