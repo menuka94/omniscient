@@ -1,3 +1,5 @@
+#!/bin/python3
+
 # Graphing Utility for Omniscient
 import os
 import sys
@@ -31,8 +33,8 @@ def lattice_ip_to_host(ip):
     return hostname
 
 
-def graph(file_name, graph_title):
-    df = pd.read_csv(f'{stats_root_dir}/{file_name}')
+def graph(_file_name, graph_title):
+    df = pd.read_csv(f'{stats_root_dir}/{_file_name}')
     # update graph fonts
     font = {
         'family': 'normal',
@@ -72,7 +74,7 @@ def graph(file_name, graph_title):
     # plt.title('CPU Usage')
 
     plt.tight_layout()
-    plt.savefig(f'{graphs_root_dir}/{hostname}.png', dpi=300)
+    plt.savefig(f'{graphs_root_dir}/{graph_title}.png', dpi=300)
 
 
 for file_name in stat_file_names:
@@ -82,6 +84,6 @@ for file_name in stat_file_names:
     graph(file_name, f'{hostname} ({ip})')
     print(f'>>> Graphing {file_name}')
 
-graph('aggregate.nmon.csv', f'Aggregate')
 print('>>> Graphing Aggregate')
+graph('aggregate.nmon.csv', f'Aggregate')
 
