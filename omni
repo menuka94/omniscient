@@ -41,6 +41,8 @@ if command -v nvidia-smi &> /dev/null; then
     export nvidiasmicmd="nvidia-smi"
 fi
 
+export nmoncmd=~/installations/nmon
+
 # execute command
 case "$1" in
     collect)

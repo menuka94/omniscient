@@ -5,6 +5,7 @@ import sys
 
 def next_record(file):
     # read line from file
+    print(f'file: {file}')
     line = file.readline()        
     if not line:
         return None

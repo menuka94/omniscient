@@ -20,8 +20,8 @@ while read line; do
         (kill $(cat $logfile.pid)) &
     else
         # stop remote monitors
-        (ssh $host -n -o ConnectTimeout=500 \
-            "kill \$(cat $logfile.pid)") &
+        ssh $host -n -o ConnectTimeout=500 \
+            "export PATH=$PATH:~/installations/; echo "Logfile: $logfile.pid"; kill \$(ps aux | grep '[n]mon' | awk '{print \$2}')" &
     fi
 done <$hostfile
 
@@ -29,3 +29,4 @@ done <$hostfile
 wait
 
 echo "[/] stopped monitor with id '$1'"
+#"export PATH=$PATH:~/installations/; echo "Logfile: $logfile.pid"; kill \$(cat $logfile.pid)") &

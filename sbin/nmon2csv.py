@@ -8,6 +8,7 @@ from os.path import basename, exists, join
 def process_file(in_file, metrics):
     metric_indices = {}
     header = 'timestamp'
+    print(f'in_file: {in_file}')
     out_line = ''
     for line in in_file:
         line = line.rstrip() # remove trailing newline character

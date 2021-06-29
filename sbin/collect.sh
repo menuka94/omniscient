@@ -33,7 +33,7 @@ while read line; do
     else
         # convert remote nmon to csv
         (ssh $host -n -o ConnectTimeout=500 \
-            "[ ! -f \"$logfile.nmon.csv\" ] && \
+            "export PATH=$PATH:~/installations/; [ ! -f \"$logfile.nmon.csv\" ] && \
                 python3 $scriptdir/nmon2csv.py $logfile.nmon $metricsopts \
                     > $logfile.nmon.csv") &
     fi

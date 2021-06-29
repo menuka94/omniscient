@@ -54,7 +54,7 @@ while read line; do
         (mkdir -p $directory) &
     else
         (ssh $host -n -o ConnectTimeout=500 \
-           mkdir -p $directory) &
+           "export PATH=$PATH:~/installations/; mkdir -p $directory") &
     fi
 done <$hostfile
 
