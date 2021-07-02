@@ -11,7 +11,8 @@ COMMANDS:
     start                               start a monitor.
     stop <montior-id>                   stop a monitor.
     version                             print application version.
-    graph                               graph collected statistics"
+    graph                               graph collected statistics
+    graph-comparison                    graph a comparison between bare-metal and k8s Spark average statistics"
 
 # compute instance variables
 basedir="$(dirname $0)"
@@ -71,6 +72,9 @@ case "$1" in
         ;;
     graph)
         python3 $scriptdir/graph.py ${@:2}
+        ;;
+    graph-comparison)
+        python3 $scriptdir/graph-comparison.py ${@:2}
         ;;
     *)
         echo "$usage"
