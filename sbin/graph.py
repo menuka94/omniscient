@@ -37,7 +37,6 @@ def graph(_file_name, graph_title):
     df = pd.read_csv(f'{stats_root_dir}/{_file_name}')
     # update graph fonts
     font = {
-        'family': 'normal',
         'weight': 'bold',
         'size': 16
     }
