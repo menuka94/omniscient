@@ -17,7 +17,10 @@ if not os.path.exists(graphs_root_dir):
 
 # list of all file names
 stat_file_names = os.listdir(stats_root_dir)
-stat_file_names.remove("aggregate.nmon.csv")
+try:
+    stat_file_names.remove("aggregate.nmon.csv")
+except:
+    print('Error: aggregagte.nmon.csv not in stat_file_names')
 
 for file_name in stat_file_names:
     # remove nvidia files

@@ -19,7 +19,10 @@ graphs_root_dir = f'{stats_root_dir}'
 def rename_and_get_sorted_file_names(root_dir):
     # list of all file names
     list_dir = os.listdir(root_dir)
-    list_dir.remove('aggregate.nmon.csv')
+    try:
+        list_dir.remove('aggregate.nmon.csv')
+    except:
+        print('Error: aggregate.nmon.csv not in list_dir')
 
     # Pad File number with zero if the number of digits is 1
     # example: 0-XXX.XXX.XXX.XXX.nmon.csv --> 00-XXX.XXX.XXX.XXX.nmon.csv
@@ -31,7 +34,10 @@ def rename_and_get_sorted_file_names(root_dir):
     # read file names again after renaming
     list_dir = os.listdir(root_dir)
 
-    list_dir.remove("aggregate.nmon.csv")
+    try:
+        list_dir.remove("aggregate.nmon.csv")
+    except:
+        print('Error: aggregate.nmon.csv not in list_dir')
 
     for file_name in list_dir:
         # remove nvidia files
