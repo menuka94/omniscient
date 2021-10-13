@@ -1,0 +1,1 @@
+timestamp,CPU_ALL:User%,MEM:memtotal,MEM:active,MEM:inactive,NET:eno1-write-KB/s,NET:eno1-read-KB/s

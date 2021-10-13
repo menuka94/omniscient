@@ -1,0 +1,2 @@
+timestamp,CPU_ALL:User%,MEM:memtotal,MEM:active,MEM:inactive,NET:eno1-write-KB/s,NET:eno1-read-KB/s
+1631585070,2.4,64275.5,5997.4,50730.0,26.4,27.4
